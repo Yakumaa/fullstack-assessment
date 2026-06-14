@@ -22,6 +22,7 @@ fullstack-assessment/
 │   ├── migrations/               # Alembic migration history
 │   ├── tests/                    # Tests for rate limiter
 │   ├── Dockerfile
+│   ├── entrypoint.sh             # Container startup: migrate → gunicorn
 │   ├── requirements.txt
 │   └── wsgi.py
 ├── frontend/                 # React + Vite
@@ -64,15 +65,15 @@ docker compose up --build
 | Backend  | http://localhost:5000   |
 | Postgres | localhost:5432 (user: shortener, db: shortener_db)  |
 
-### 3. Run database migrations
+<!-- ### 3. Run database migrations
 
 In a separate terminal (after the containers are up):
 
 ```bash
 docker compose exec backend flask db upgrade
-```
+``` -->
 
-### 4. (Optional) Seed / verify DB
+### 3. (Optional) Seed / verify DB
 
 ```bash
 docker compose exec db psql -U shortener -d shortener_db
