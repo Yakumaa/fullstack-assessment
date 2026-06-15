@@ -22,7 +22,6 @@ fullstack-assessment/
 │   ├── migrations/               # Alembic migration history
 │   ├── tests/                    # Tests for rate limiter
 │   ├── Dockerfile
-│   ├── entrypoint.sh             # Container startup: migrate → gunicorn
 │   ├── requirements.txt
 │   └── wsgi.py
 ├── frontend/                 # React + Vite

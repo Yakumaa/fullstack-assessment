@@ -7,8 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN sed -i 's/\r$//' /app/entrypoint.sh
-
 EXPOSE 5000
 
-ENTRYPOINT ["sh", "entrypoint.sh"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "wsgi:app"]
